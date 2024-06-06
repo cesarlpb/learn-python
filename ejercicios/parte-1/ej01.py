@@ -14,7 +14,7 @@ print("2")
 # %% Empezamos a resolver el ejercicio aquí:
 
 # Vamos a considerar que a y b son int
-def calcular_maximo(a: int, b: int) -> int:
+def calcular_maximo_dos(a: int, b: int) -> int:
     """
     Calcula el valor máximo entre dos números enteros.
 
@@ -33,9 +33,9 @@ def calcular_maximo(a: int, b: int) -> int:
 
 
 # %%
-r_1 = calcular_maximo(1, 3) # 3
-r_2 = calcular_maximo('1', '2') # '2'
-r_3 = calcular_maximo(5, 5) # 5
+r_1 = calcular_maximo_dos(1, 3) # 3
+r_2 = calcular_maximo_dos('1', '2') # '2'
+r_3 = calcular_maximo_dos(5, 5) # 5
 
 assert r_1 == 3
 assert r_2 == '2' # no es int
