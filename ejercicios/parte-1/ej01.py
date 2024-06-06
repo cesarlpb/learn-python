@@ -13,6 +13,33 @@ print("2")
 
 # %% Empezamos a resolver el ejercicio aquí:
 
+# Vamos a considerar que a y b son int
+def calcular_maximo(a: int, b: int) -> int:
+    """
+    Calcula el valor máximo entre dos números enteros.
+
+    Parameters:
+    a (int): El primer número entero.
+    b (int): El segundo número entero.
+
+    Returns:
+    int: El mayor de los dos números enteros proporcionados.
+    """
+    if a > b:
+        return a
+    else:
+        return b
 
 
 
+# %%
+r_1 = calcular_maximo(1, 3) # 3
+r_2 = calcular_maximo('1', '2') # '2'
+r_3 = calcular_maximo(5, 5) # 5
+
+assert r_1 == 3
+assert r_2 == '2' # no es int
+assert r_3 == 5
+
+
+# %%
