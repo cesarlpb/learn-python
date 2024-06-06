@@ -10,3 +10,9 @@ Repositorio para aprender Python
 - [Ejercicios de Python nivel básico](https://pythondiario.com/ejercicios-de-programacion-python)
 
 - [Ejercicios de FreeCodeCamp](https://www.freecodecamp.org/espanol/news/25-proyectos-en-python-para-principiantes/)
+
+## ¿Preguntas?
+
+![alt text](image.png)
+
+Tiene respuestas.
