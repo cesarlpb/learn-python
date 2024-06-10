@@ -31,7 +31,6 @@ def calcular_maximo_dos(a: int, b: int) -> int:
         return b
 
 
-
 # %%
 r_1 = calcular_maximo_dos(1, 3) # 3
 r_2 = calcular_maximo_dos('1', '2') # '2'
