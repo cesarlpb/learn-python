@@ -40,7 +40,7 @@ def calcular_maximo_lista(lista: list) -> int | None:
         if num > maximo_actual:
           maximo_actual = num
   return maximo_actual
-    
+
 
 # %% Tests
 lista = [-1, 0, 1] # max -> 1
