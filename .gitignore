@@ -2,4 +2,4 @@ venv/
 venv/*
 .venv/
 .venv/*
-**.csv
+vehicles.csv
