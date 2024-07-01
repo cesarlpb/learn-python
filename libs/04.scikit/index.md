@@ -58,6 +58,12 @@ y = iris.target
 
 3. **Dividir el Dataset en Conjuntos de Entrenamiento y Prueba**
 
+![alt text](image.png)
+
+- Se separan datos de entrenamiento (train) y de prueba (test) para que una parte no influya a la otra. 
+- Se hace de forma aleatoria para que no haya sesgo. 
+- La parte recomendada de test es alrededor del `30%`.
+
 ```python
 # Dividir los datos en conjuntos de entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
