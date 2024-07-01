@@ -11,6 +11,10 @@ Repositorio para aprender Python
 
 - [Ejercicios de FreeCodeCamp](https://www.freecodecamp.org/espanol/news/25-proyectos-en-python-para-principiantes/)
 
+## Librerías
+
+- [Dataset salarios dev por categorías, años, etc.](https://www.kaggle.com/datasets/rkiattisak/salaly-prediction-for-beginer)
+
 ## ¿Preguntas?
 
 ![alt text](image.png)
