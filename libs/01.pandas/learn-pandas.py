@@ -2,15 +2,19 @@
 
 ### Parte 1: Introducción ### 
 
+# En terminal:
 """
   Activando el entorno virtual:
   pip install --upgrade pip
   pip install pandas
 """
-#%% Esto es una celda de ejemplo
+# %% Esto es una celda de ejemplo
+
 print("Introducción a Pandas")
 import pandas as pd # importación estándar
+
 # si os sale warning: which python3 y seleccionais el entorno virtual en VS Code 
+
 print(f"Estamos usando pandas v.{pd.__version__}") 
 
 # Si os sale un aviso de ipykernel o similar para instalar paquetes de 'kernel' Aceptamos, son necesarios para que el cuaderno funcione en VS Code
@@ -83,8 +87,8 @@ print(df.columns)
 #%% Comparación en memoria:
 import sys
 
-print("df:", sys.getsizeof(df), "bytes")
-print(f"Equivale a {sys.getsizeof(df) / 1_000_000_000} Gb")
+print("Tamaño df :", sys.getsizeof(df), "bytes")
+print(f"Equivale a {sys.getsizeof(df) / 1_000_000_000} Gb") # es mejor cargar el dataset completo aquí -> vehicles.csv
 
 #%% Accedemos a una columna por nombre -> Serie
 region_col = df['region']
@@ -97,6 +101,17 @@ print("primera fila:")
 print("")
 print(primera_fila) # columnas
 
+# print del id de la primera fila:
+print("")
+id = primera_fila['id']
+print(id)
+#%% filtramos por id:
+# Seleccionar la fila donde 'id' es 7218891961
+print("dato:")
+dato = df[df['id'] == 7218891961]
+print(dato)
+
+#%% segunda fila
 # El df tiene campo columns:
 print(df.columns)   # columnas
 
@@ -132,6 +147,8 @@ data = {
 df = pd.DataFrame(data)
 
 # Filtrar filas donde la edad es mayor de 25
+# El filtro crea una serie con bool para aplicar al df:
+print(df['Edad'] > 25)
 df_filtrado = df[df['Edad'] > 25]
 
 print("df completo:")
@@ -148,6 +165,8 @@ print(df[df['Edad'] == 25])
 print("")
 print("20 < Edad < 30")
 filtro = (df['Edad'] > 20) & (df['Edad'] < 30) # serie con bool
+print(filtro) # 3 filas
+
 df_filtrado = df[filtro] # filtra los casos True (filas)
 print(df_filtrado)
 

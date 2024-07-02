@@ -3,3 +3,4 @@ venv/*
 .venv/
 .venv/*
 vehicles.csv
+.DS_Store
