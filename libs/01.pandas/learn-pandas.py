@@ -9,20 +9,21 @@
 """
 #%% Esto es una celda de ejemplo
 print("Introducción a Pandas")
-import pandas as pd # si os sale warning: which python3 y seleccionais el entorno virtual en VS Code 
+import pandas as pd # importación estándar
+# si os sale warning: which python3 y seleccionais el entorno virtual en VS Code 
 print(f"Estamos usando pandas v.{pd.__version__}") 
 
-"""Si os sale un aviso de ipykernel o similar para instalar paquetes de 'kernel' Aceptamos, son necesarios para que el cuaderno funcione en VS Code"""
+# Si os sale un aviso de ipykernel o similar para instalar paquetes de 'kernel' Aceptamos, son necesarios para que el cuaderno funcione en VS Code
 
 # %% Series
 import pandas as pd
 
 # Crear una Serie a partir de una lista
-data = [1, 2, 3, 4, 5]  # lista
-serie = pd.Series(data) # serie
+lista = [1, 2, 3, 4, 5]  # lista
+serie = pd.Series(lista) # serie
 
 print("lista:")
-print(data)
+print(lista)
 print("")
 print("serie:")
 print(serie)
@@ -30,7 +31,7 @@ print(serie)
 #%% Comparación en memoria:
 import sys
 
-print("lista:", sys.getsizeof(data), "bytes")
+print("lista:", sys.getsizeof(lista), "bytes")
 print("serie:", sys.getsizeof(serie), "bytes")
 
 
@@ -49,7 +50,11 @@ print("dict:")
 print(data)
 print("")
 print("dataframe:") # dataframe == df
-print(df)
+# leemos una col:
+print(df['Edad'])
+# leemos dos cols:
+print(df[['Edad', 'Ciudad']])
+
 
 #%% Comparación en memoria:
 import sys
@@ -57,10 +62,9 @@ import sys
 print("dict:", sys.getsizeof(data), "bytes")
 print("df:", sys.getsizeof(df), "bytes")
 
-"""
-Para continuar, buscad un dataset, nos vale cualquiera. 
-Yo uso este: https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data (1.45Gb)
-""" 
+# Para continuar, buscad un dataset, nos vale cualquiera. 
+# Yo uso este: https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data (1.45Gb)
+ 
 
 # Para ejecutar la siguiente celda se necesita tener el dataset en la misma carpeta
 
@@ -68,9 +72,14 @@ Yo uso este: https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-d
 import pandas as pd
 
 # Leer un archivo CSV
-df = pd.read_csv('vehicles.csv')
+df = pd.read_csv('vehicles_acortado.csv')
 
 print(df.head())  # Mostrar las primeras 5 filas del DataFrame
+print("")
+
+# columnas:
+print("Columnas:")
+print(df.columns)
 #%% Comparación en memoria:
 import sys
 
