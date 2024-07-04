@@ -77,11 +77,8 @@ np.random.seed(0)  # El id para reproducibilidad
 # fahrenheit = celsius * 9 / 5 + 32 # cálculo exacto
 
 # Ejemplo con dos datos:
-x = np.array([[-40], [100]])  # etc...
-y = np.array([[-38], [198]]) # etc...
-
-celsius = x
-fahrenheit = y
+celsius = np.array([[-40], [0], [100]])  # etc... Celsius
+fahrenheit = np.array([[-40], [32], [212]]) # etc...  Farenheit
 
 # Agregar ruido aleatorio a los datos de Fahrenheit
 ruido = np.random.normal(0, 2, fahrenheit.shape)
@@ -94,8 +91,10 @@ model = LinearRegression()
 model.fit(celsius, fahrenheit_con_ruido)
 
 # Obtener los coeficientes del modelo
-coeficiente = model.coef_[0][0]
-intercepto = model.intercept_[0]
+
+# y = m*x + n -> F = m * C + n 
+coeficiente = model.coef_[0][0]     # m
+intercepto = model.intercept_[0]    # n
 
 print(f'Coeficiente (pendiente): {coeficiente}')
 print(f'Intercepto: {intercepto}')
