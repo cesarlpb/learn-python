@@ -1,4 +1,8 @@
-#%%
+#%% Instalación
+"""
+    # Con el venv activado:
+    pip install scikit-learn
+"""
 # %% importación estándar
 import sklearn
 print("Estamos usando scikit-learn v", sklearn.__version__)
@@ -16,9 +20,9 @@ print("Se han cargado las importaciones")
 
 #%% Cargar el dataset de Iris
 iris = datasets.load_iris()
-X = iris.data
-y = iris.target
-print("shape de X:    ", len(X))
+X = iris.data       # variable independiente
+y = iris.target     # variable dependiente
+print("len de X:     ", len(X))
 print("Elementos en y:", len(y))
 
 #%% split de train y test
@@ -36,6 +40,10 @@ print("Elementos en y_test:", len(y_test))
 
 # %% Estandarizar las características => escalado
 scaler = StandardScaler()
+
+print("X_train:   ", len(X_train), X_train.shape)
+print("X_test:    ", len(X_test), X_test.shape)
+
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
