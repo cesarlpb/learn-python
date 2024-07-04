@@ -40,7 +40,7 @@ print("array 2D:", type(arr2d))
 import numpy as np
 
 # Crear un arreglo de ceros
-zeros = np.zeros((3, 3))
+zeros = np.zeros((2, 2))
 print(zeros)
 print("")
 
@@ -50,7 +50,17 @@ print(ones)
 print("")
 
 # Crear un arreglo con valores aleatorios
-random = np.random.random((2, 2))
+
+# Establece una semilla (opcional) -> para replicar escenarios
+np.random.seed(42)
+
+# Generar y desechar algunos números (warm-up)
+warmup_iterations = 100
+for _ in range(warmup_iterations):
+    _ = np.random.random()
+
+# Por defecto salen de 0 a 1, para que sean de 0 a 100 multiplicamos por 100:
+random = 100 * np.random.random((2, 2))
 print(random)
 print("")
 
@@ -86,7 +96,7 @@ print("divi: ", division)
 print("")
 # Producto punto
 producto_punto = np.dot(a, b) # 1*5 + 2*6 + 3*7 + 4*8
-print(producto_punto)
+print("producto escalar:", producto_punto)
 
 #%% Aplicar funciones a un np array
 import numpy as np
@@ -107,7 +117,7 @@ print(tan)
 import numpy as np
 
 # Crear un arreglo de ejemplo
-arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+arr = np.array([1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10, 10])
 
 # Calcular la media
 mean = np.mean(arr) 
