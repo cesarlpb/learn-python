@@ -131,3 +131,18 @@ print("Mediana:   ", median)
 std_dev = np.std(arr)
 print("Desviación:", std_dev)
 # %%
+import numpy as np
+
+# Configurar NumPy para mostrar números con dos decimales
+np.set_printoptions(precision=2, suppress=True)
+
+# Crear un array de ejemplo
+array = np.random.random(10)
+
+# Mostrar el array
+print(array)
+# No se pierden los decimales:
+print(array[0])
+
+np.set_printoptions(precision=20)
+print(array)
