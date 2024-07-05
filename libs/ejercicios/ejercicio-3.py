@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Generar datos de ejemplo
 celsius = np.array(range(-40, 101, 10))  # Desde -40 hasta 100 grados Celsius
-COEFICIENTE_RUIDO = 2.5
+COEFICIENTE_RUIDO = 5
 fahrenheit = celsius * 9/5 + 32 + COEFICIENTE_RUIDO * np.random.randint(-2, 3, size=celsius.shape)  # Conversión a Fahrenheit con error
 # Nota: si colocais el coeficiente de ruido a cero no habrá error y el ajuste será perfecto con r^2 == 1
 
@@ -26,7 +26,7 @@ y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
-print(f"Error Cuadrático Medio: {mse}")
+print(f"Error Cuadrático Medio            : {mse}")
 print(f"Coeficiente de Determinación (R^2): {r2}")
 
 # Ecuación del modelo
@@ -37,7 +37,7 @@ print(f"Ecuación del modelo: Fahrenheit = {coef:.2f} * Celsius + {intercept:.2f
 if COEFICIENTE_RUIDO:
   print("Conclusión: Si hay ruido (equivale a que los datos no sean exactos), no coincide con la ecuación exacta: F = 9/5 * C + 32")
 else:
-  print("Conclusión: Coincide con la ecuación exacta: F = 9/5 * C + 32")
+  print("Conclusión: Coincide con la ecuación exacta: F = 1.8 * C + 32")
 
 
 # Graficar las predicciones vs los valores reales
